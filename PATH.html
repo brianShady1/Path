@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #happy-valentines {
+      font-size: 28px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+
+    #love-letter, #voice-mail {
+      display: none;
+    }
+
+    #letter-content {
+      white-space: pre-wrap;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    #exit-btn {
+      margin-top: 20px;
+    }
+  </style>
+  <title>Happy Valentines!</title>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mb-4">Happy Valentines!</h1>
+
+  <!-- Page 1: User's Name -->
+  <div id="user-name-page">
+    <input type="text" id="user-name" class="form-control mb-3" placeholder="Enter your name">
+    <button class="btn btn-primary" onclick="submitName()">Submit</button>
+  </div>
+
+  <!-- Page 2: Love Letter and Voice Mail Options -->
+  <div id="options-page" class="mt-4" style="display: none;">
+    <h2 id="question"></h2>
+    <button class="btn btn-success" onclick="showLoveLetter()">Love Letter</button>
+    <button class="btn btn-info" onclick="showVoiceMail()">Voice Mail</button>
+  </div>
+
+  <!-- Page 3: Love Letter -->
+  <div id="love-letter" class="mt-4" style="display: none;">
+    <div id="letter-content"></div>
+    <button id="exit-btn" class="btn btn-danger" onclick="exit()">Exit</button>
+  </div>
+
+  <!-- Page 4: Voice Mail -->
+  <div id="voice-mail" class="mt-4" style="display: none;">
+    <audio controls>
+      <source src="path.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+    <button id="exit-btn" class="btn btn-danger" onclick="exit()">Exit</button>
+  </div>
+</div>
+
+<script>
+  function submitName() {
+    const userName = document.getElementById("user-name").value;
+    if (userName.trim() !== "") {
+      document.getElementById("user-name-page").style.display = "none";
+      document.getElementById("options-page").style.display = "block";
+      document.getElementById("question").innerText = `${userName}, what do you choose?`;
+    } else {
+      alert("Please enter your name.");
+    }
+  }
+
+  function showLoveLetter() {
+    document.getElementById("options-page").style.display = "none";
+    document.getElementById("love-letter").style.display = "block";
+
+    // Love Letter content (you can customize this)
+    const loveLetterContent = `
+      Dear ${document.getElementById("user-name").value},
+      
+      This is my first ever Valentine na gumawa nito so i’m proud also, i want to take a moment to express my deepest feelings for you. Oo sa sobrang advance ko mag plans i created this while you were working, nung january 19, 2023 at exactly 5:59 pm. I am grateful for every moment we share, you are the one I cherish and the one I adore. As we journey through life together, i look forward to creating countless memories and building a future filled with love and happiness. Also remember my pinned tweet na i will always love you no matter what
+ and i will always treat you the best kasi you deserve to be treated the best. 
+     
+    
+ i hope you like this simple webpage i created :)
+ and also listen to only exception by paramore hihi
+
+
+Happy Valentine’s day! i love you
+
+
+
+
+
+Sincerely yours,
+
+Brian
+    `;
+
+    typewriterEffect("letter-content", loveLetterContent);
+  }
+
+  function showVoiceMail() {
+    document.getElementById("options-page").style.display = "none";
+    document.getElementById("voice-mail").style.display = "block";
+  }
+
+  function typewriterEffect(elementId, text) {
+    const speed = 50; // typing speed in milliseconds
+    let i = 0;
+
+    function type() {
+      if (i < text.length) {
+        document.getElementById(elementId).innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
+  }
+
+  function exit() {
+    location.reload(); // Reload the page to start over
+  }
+
+  function fadeOutAndHide(elementId) {
+    const element = document.getElementById(elementId);
+    element.style.animation = 'fadeOut 1s ease-in-out';
+    setTimeout(() => {
+      element.style.display = 'none';
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
