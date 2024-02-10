@@ -46,6 +46,10 @@
     #exit-btn {
       margin-top: 20px;
     }
+
+    .back-btn {
+      margin-top: 20px;
+    }
   </style>
   <title>Happy Valentines!</title>
 </head>
@@ -76,7 +80,8 @@
   <!-- Page 3: Love Letter -->
   <div id="love-letter" class="mt-4" style="display: none;">
     <div id="letter-content"></div>
-    <button id="exit-btn" class="btn btn-danger" onclick="exit()">Exit</button>
+    <button class="btn btn-danger exit-btn" onclick="exit()">Exit</button>
+    <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
   </div>
 
   <!-- Page 4: Voice Mail -->
@@ -85,7 +90,8 @@
       <source src="path.mp3" type="audio/mp3">
       Your browser does not support the audio tag.
     </audio>
-    <button id="exit-btn" class="btn btn-danger" onclick="exit()">Exit</button>
+    <button class="btn btn-danger exit-btn" onclick="exit()">Exit</button>
+    <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
   </div>
 
   <!-- Page 5: Mini Video -->
@@ -96,7 +102,8 @@
       Your browser does not support the video tag.
     </video>
     <!-- Button to play the video -->
-    <button id="play-video-btn" class="btn btn-primary mt-2" onclick="playVideo()">Play Video</button>
+    <button class="btn btn-primary play-video-btn" onclick="playVideo()">Play Video</button>
+    <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
   </div>
 </div>
 
@@ -113,6 +120,14 @@
     } else {
       alert("Please enter your name.");
     }
+  }
+
+  function showOptionsPage() {
+    // Hide other sections and show the options page
+    document.getElementById("love-letter").style.display = "none";
+    document.getElementById("voice-mail").style.display = "none";
+    document.getElementById("mini-video").style.display = "none";
+    document.getElementById("options-page").style.display = "block";
   }
 
   function showLoveLetter() {
