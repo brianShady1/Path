@@ -43,9 +43,7 @@
       font-size: 18px;
     }
 
-    #exit-btn {
-      margin-top: 20px;
-    }
+    
 
     .back-btn {
       margin-top: 20px;
@@ -80,7 +78,7 @@
   <!-- Page 3: Love Letter -->
   <div id="love-letter" class="mt-4" style="display: none;">
     <div id="letter-content"></div>
-    <button class="btn btn-danger exit-btn" onclick="exit()">Exit</button>
+    
     <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
   </div>
 
@@ -90,7 +88,7 @@
       <source src="path.mp3" type="audio/mp3">
       Your browser does not support the audio tag.
     </audio>
-    <button class="btn btn-danger exit-btn" onclick="exit()">Exit</button>
+  
     <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
   </div>
 
@@ -191,9 +189,7 @@ Brian
     type();
   }
 
-  function exit() {
-    location.reload(); // Reload the page to start over
-  }
+
 
   function fadeOutAndHide(elementId) {
     const element = document.getElementById(elementId);
