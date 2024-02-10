@@ -28,8 +28,7 @@
       }
     }
 
-
-    #love-letter, #voice-mail {
+    #love-letter, #voice-mail, #gif-container {
       display: none;
     }
 
@@ -54,6 +53,11 @@
   <div id="user-name-page">
     <input type="text" id="user-name" class="form-control mb-3" placeholder="Enter your name">
     <button class="btn btn-primary" onclick="submitName()">Submit</button>
+  </div>
+
+  <!-- Add this div for the GIF -->
+  <div id="gif-container">
+    <img src="your_gif_url_here.gif" alt="Happy Valentine's GIF">
   </div>
 
   <!-- Page 2: Love Letter and Voice Mail Options -->
@@ -86,6 +90,9 @@
       document.getElementById("user-name-page").style.display = "none";
       document.getElementById("options-page").style.display = "block";
       document.getElementById("question").innerText = `${userName}, what do you choose?`;
+
+      // Show the GIF container
+      document.getElementById("gif-container").style.display = "block";
     } else {
       alert("Please enter your name.");
     }
