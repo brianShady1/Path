@@ -43,8 +43,6 @@
       font-size: 18px;
     }
 
-    
-
     .back-btn {
       margin-top: 20px;
     }
@@ -73,6 +71,7 @@
     <button class="btn btn-success" onclick="showLoveLetter()">Love Letter</button>
     <button class="btn btn-info" onclick="showVoiceMail()">Voice Mail</button>
     <button class="btn btn-warning" onclick="showMiniVideo()">Mini Video</button> <!-- New option button -->
+    <button class="btn btn-primary" onclick="showVirtualCard()">Virtual Valentines Card</button> <!-- New button -->
   </div>
 
   <!-- Page 3: Love Letter -->
@@ -188,7 +187,9 @@ Brian
     type();
   }
 
-
+  function showVirtualCard() {
+    // Implement the functionality for the virtual card button here
+  }
 
   function fadeOutAndHide(elementId) {
     const element = document.getElementById(elementId);
