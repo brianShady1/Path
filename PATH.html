@@ -92,12 +92,12 @@
   </div>
 
   <!-- Page 5: Mini Video -->
-  <div id="mini-video" class="mt-4" style="display: none;">
-    <!-- Insert the video element -->
-    <video id="video-player" controls width="500">
-      <source src="valentines.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<div id="mini-video" class="mt-4">
+  <!-- Button to play the video -->
+  <button class="btn btn-primary play-video-btn" onclick="playVideo()">Click Here to Watch Video</button>
+  <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
+</div>
+
     <!-- Button to play the video -->
     <button class="btn btn-primary play-video-btn" onclick="playVideo()">Play Video</button>
     <button class="btn btn-primary back-btn" onclick="showOptionsPage()">Back</button>
@@ -160,9 +160,13 @@ Brian
     document.getElementById("mini-video").style.display = "block";
   }
 
-  function playVideo() {
-    // Play the video
-    document.getElementById("video-player").play();
+function playVideo() {
+    window.location.href = "https://nationalueduph-my.sharepoint.com/:v:/g/personal/dejesusbd_students_nu-laguna_edu_ph/EfloGGOyNIBCls9kpC8rNvwBvK3WuB6UGxSjTD7MkYBErg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&email=sengsondl%40students.nu-laguna.edu.ph&e=lvNgaH";
+  }
+
+  function showOptionsPage() {
+    // Implement your logic to show options page
+  }
   }
 
   function typewriterEffect(elementId, text) {
