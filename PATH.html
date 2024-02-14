@@ -182,13 +182,14 @@ Brian
     // Implement the functionality for the virtual card button here
   }
 
-  function fadeOutAndHide(elementId) {
-    const element = document.getElementById(elementId);
-    element.style.animation = 'fadeOut 1s ease-in-out';
-    setTimeout(() => {
-      element.style.display = 'none';
-    }, 1000);
-  }
+function fadeOutAndHide(elementId) {
+  const element = document.getElementById(elementId);
+  element.style.animation = 'fadeOut 1s ease-in-out';
+  setTimeout(() => {
+    element.style.display = 'none';
+  }, 1000);
+}
+
 </script>
 
 </body>
